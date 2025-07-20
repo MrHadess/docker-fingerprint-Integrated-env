@@ -17,14 +17,14 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build Docker image
-      run: docker build -t custom-adspower-env .
+      run: docker build -t custom-fingerprint-env .
 
     - name: Save Docker image to tar file
       run: |
-            docker save -o custom-adspower-env.tar custom-adspower-env
+            docker save -o custom-fingerprint-env.tar custom-fingerprint-env
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: custom-adspower-env
-        path: custom-adspower-env.tar
+        name: custom-fingerprint-env
+        path: custom-fingerprint-env.tar
